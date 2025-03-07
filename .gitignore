@@ -1,0 +1,15 @@
+venv
+.env
+__pycache__
+.DS_Store
+
+# Terraform
+.terraform/
+terraform.tfstate
+terraform.tfstate.backup
+terraform.tfvars
+*.tfplan
+/scrapers/*/tmp/
+scrapers/*/data/**
+.idea/
+data
