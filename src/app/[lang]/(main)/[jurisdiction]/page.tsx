@@ -304,6 +304,14 @@ export default async function ProvinceIndex({
               {jurisdiction.financialYear}
             </Trans>
           </H2>
+          <P>
+            <Trans>
+              Look back at what {jurisdiction.name}'s government made and spent.{" "}
+              {["Toronto", "Vancouver"].includes(jurisdiction.name) && (
+                <Trans>Numbers are reported on an accrual basis.</Trans>
+              )}
+            </Trans>
+          </P>
         </Section>
         <div className="sankey-chart-container relative overflow-hidden sm:(mr-0 ml-0) md:(min-h-[776px] min-w-[1280px] w-screen -ml-[50vw] -mr-[50vw] left-1/2 right-1/2)">
           <JurisdictionSankey data={sankey} />
