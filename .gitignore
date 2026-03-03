@@ -54,6 +54,10 @@ scrapers/data
 
 tmp/
 
+# Large data files — keep local, don't commit
+PublicAccountsPDFs/
+*.sqlite
+
 # Local UNIX dev
 flake.lock
 flake.nix
