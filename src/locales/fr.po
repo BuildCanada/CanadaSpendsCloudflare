@@ -3946,7 +3946,7 @@ msgid "Veterans Affairs Canada | Canada Spends"
 msgstr "Anciens Combattants Canada | Canada Dépense"
 
 #. placeholder {0}: firstNation.name
-#: src/app/[lang]/(main)/first-nations/[bcid]/[year]/page.tsx:59
+#: src/app/[lang]/(main)/first-nations/[bcid]/[year]/page.tsx:60
 msgid "View {year} financial statements for {0}{provinceSuffix}. Includes statement of operations, financial position, and remuneration data from the First Nations Financial Transparency Act annual report."
 msgstr "Consultez les états financiers {year} pour {0}{provinceSuffix}. Comprend l'état des résultats, la situation financière et les données de rémunération du rapport annuel de la Loi sur la transparence financière des Premières Nations."
 

@@ -7,7 +7,7 @@ import { locales } from "@/lib/constants";
 import { generateHreflangAlternates } from "@/lib/utils";
 import { Metadata } from "next";
 
-export const revalidate = 3600;
+export const revalidate = 86400;
 export const dynamicParams = true;
 
 export async function generateStaticParams() {
