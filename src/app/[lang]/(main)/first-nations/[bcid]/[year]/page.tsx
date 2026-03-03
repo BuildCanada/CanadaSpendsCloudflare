@@ -8,7 +8,6 @@ import {
   getFirstNationById,
   getFirstNationYearData,
 } from "@/lib/supabase";
-import { locales } from "@/lib/constants";
 import { generateHreflangAlternates } from "@/lib/utils";
 import { Metadata } from "next";
 
@@ -18,17 +17,15 @@ export const dynamicParams = true;
 export async function generateStaticParams() {
   const firstNations = await getAllFirstNations();
 
-  // Only pre-render the most recent year per First Nation to keep build size manageable.
-  // Older years are still accessible via dynamicParams and cached via ISR on first request.
-  return locales.flatMap((lang) =>
-    firstNations
-      .filter((fn) => fn.availableYears.length > 0)
-      .map((firstNation) => ({
-        lang,
-        bcid: firstNation.bcid,
-        year: firstNation.availableYears[0],
-      })),
-  );
+  // Only pre-render the most recent year in English per First Nation to keep build size manageable.
+  // French and older years are still accessible via dynamicParams and cached via ISR on first request.
+  return firstNations
+    .filter((fn) => fn.availableYears.length > 0)
+    .map((firstNation) => ({
+      lang: "en",
+      bcid: firstNation.bcid,
+      year: firstNation.availableYears[0],
+    }));
 }
 
 export async function generateMetadata({

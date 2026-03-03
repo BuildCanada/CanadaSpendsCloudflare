@@ -2,7 +2,7 @@ import { redirect, notFound } from "next/navigation";
 import { Trans, useLingui } from "@lingui/react/macro";
 import { initLingui } from "@/initLingui";
 import { getFirstNationById, getAllFirstNations } from "@/lib/supabase";
-import { locales, BASE_URL } from "@/lib/constants";
+import { BASE_URL } from "@/lib/constants";
 import {
   H1,
   Intro,
@@ -20,12 +20,10 @@ export const dynamicParams = true;
 export async function generateStaticParams() {
   const firstNations = await getAllFirstNations();
 
-  return locales.flatMap((lang) =>
-    firstNations.map((firstNation) => ({
-      lang,
-      bcid: firstNation.bcid,
-    })),
-  );
+  return firstNations.map((firstNation) => ({
+    lang: "en",
+    bcid: firstNation.bcid,
+  }));
 }
 
 export async function generateMetadata({

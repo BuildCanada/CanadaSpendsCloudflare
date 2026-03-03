@@ -6,7 +6,6 @@ import {
   FirstNationsSearch,
 } from "@/components/first-nations";
 import { getAllFirstNations } from "@/lib/supabase";
-import { locales } from "@/lib/constants";
 import { generateHreflangAlternates } from "@/lib/utils";
 import { Metadata } from "next";
 
@@ -14,7 +13,7 @@ export const revalidate = 86400;
 export const dynamicParams = true;
 
 export async function generateStaticParams() {
-  return locales.map((lang) => ({ lang }));
+  return [{ lang: "en" }];
 }
 
 export async function generateMetadata({
